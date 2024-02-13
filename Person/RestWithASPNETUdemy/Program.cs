@@ -19,6 +19,9 @@ namespace RestWithASPNETUdemy
                 new MySqlServerVersion(new Version(8,0,36)
                 )));
 
+            //Versionamento da API
+            builder.Services.AddApiVersioning();
+
             //Injetando dependencia
             builder.Services.AddScoped<IPersonService, PersonServiceImplementation>();
 
