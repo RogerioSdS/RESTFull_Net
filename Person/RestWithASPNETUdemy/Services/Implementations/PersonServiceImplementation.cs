@@ -1,68 +1,90 @@
 ﻿using RestWithASPNETUdemy.Model;
+using RestWithASPNETUdemy.Model.Context;
 
 namespace RestWithASPNETUdemy.Services.Implementations
 {
     public class PersonServiceImplementation : IPersonService
     {
-        private volatile int count;
 
-        public Person Create(Person person)
+        private MySQLContext _context;
+
+        public PersonServiceImplementation(MySQLContext context)
         {
-            //Logica do Acesso ao DB
-            return person;
+            _context = context;
         }
 
-        public void Delete(long person)
+        // Method responsible for returning all people,
+        public List<Person> FindAll()
         {
-            //Logica de negocio para Delete
+            return _context.Persons.ToList();
         }
 
-
-            public List<Person> FindAll()
-        {
-            List<Person> persons = new List<Person>();
-            for (int i = 0; i < 8; i++)
-            {
-                Person person = MockPerson(i);
-                persons.Add(person);
-            }
-            return persons;
-        }
-
-
+        // Method responsible for returning one person by ID
         public Person FindById(long id)
         {
-            return new Person
-            {
-                Id = IncrementAndGet(),
-                FirstName = "Deus",
-                LastName = "Seja louvado",
-                Address = "Ceus",
-                Gender = "o Todo Poderoso"
-            };
+            return _context.Persons.SingleOrDefault(p => p.Id.Equals(id));
         }
 
-        public Person Update(Person person)
+        // Method responsible to crete one new person
+        public Person Create(Person person)
         {
+            try
+            {
+                _context.Add(person);
+                _context.SaveChanges();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
             return person;
         }
 
-        private Person MockPerson(int i)
+        // Method responsible for updating one person
+        public Person Update(Person person)
         {
-            return new Person
+            // We check if the person exists in the database
+            // If it doesn't exist we return an empty person instance
+            if (!Exists(person.Id)) return new Person();
+
+            // Get the current status of the record in the database
+            var result = _context.Persons.SingleOrDefault(p => p.Id.Equals(person.Id));
+            if (result != null)
             {
-                Id = IncrementAndGet(),
-                FirstName = "Deus",
-                LastName = "Seja louvado",
-                Address = "Ceus",
-                Gender = "o Todo Poderoso"
-            };
+                try
+                {
+                    // set changes and save
+                    _context.Entry(result).CurrentValues.SetValues(person);
+                    _context.SaveChanges();
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+            }
+            return person;
         }
 
-        private long IncrementAndGet()
+        // Method responsible for deleting a person from an ID
+        public void Delete(long id)
         {
-            return Interlocked.Increment(ref count);
+            var result = _context.Persons.SingleOrDefault(p => p.Id.Equals(id));
+            if (result != null)
+            {
+                try
+                {
+                    _context.Persons.Remove(result);
+                    _context.SaveChanges();
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+            }
         }
-        
+        private bool Exists(long id)
+        {
+            return _context.Persons.Any(p => p.Id.Equals(id));
+        }
     }
 }

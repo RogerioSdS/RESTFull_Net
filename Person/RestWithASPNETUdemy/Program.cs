@@ -1,3 +1,5 @@
+using Microsoft.EntityFrameworkCore;
+using RestWithASPNETUdemy.Model.Context;
 using RestWithASPNETUdemy.Services;
 using RestWithASPNETUdemy.Services.Implementations;
 
@@ -12,6 +14,12 @@ namespace RestWithASPNETUdemy
             // Add services to the container.
 
             builder.Services.AddControllers();
+            var connection = builder.Configuration["MySQLConnection:MySQLConnectionString"];
+            builder.Services.AddDbContext<MySQLContext>(options => options.UseMySql(connection ,
+                new MySqlServerVersion(new Version(8,0,36)
+                )));
+
+            //Injetando dependencia
             builder.Services.AddScoped<IPersonService, PersonServiceImplementation>();
 
             var app = builder.Build();
