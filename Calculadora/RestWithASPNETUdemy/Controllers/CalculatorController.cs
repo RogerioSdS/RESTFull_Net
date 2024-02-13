@@ -100,7 +100,5 @@ namespace RestWithASPNETUdemy.Controllers
 
             return 0;
         }
-
-
     }
 }
