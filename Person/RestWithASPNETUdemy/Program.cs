@@ -1,7 +1,9 @@
 using Microsoft.EntityFrameworkCore;
+using RestWithASPNETUdemy.Business;
+using RestWithASPNETUdemy.Business.Implementations;
 using RestWithASPNETUdemy.Model.Context;
-using RestWithASPNETUdemy.Services;
-using RestWithASPNETUdemy.Services.Implementations;
+using RestWithASPNETUdemy.Repository;
+using RestWithASPNETUdemy.Repository.Implementations;
 
 namespace RestWithASPNETUdemy
 {
@@ -15,15 +17,16 @@ namespace RestWithASPNETUdemy
 
             builder.Services.AddControllers();
             var connection = builder.Configuration["MySQLConnection:MySQLConnectionString"];
-            builder.Services.AddDbContext<MySQLContext>(options => options.UseMySql(connection ,
-                new MySqlServerVersion(new Version(8,0,36)
+            builder.Services.AddDbContext<MySQLContext>(options => options.UseMySql(connection,
+                new MySqlServerVersion(new Version(8, 0, 36)
                 )));
 
             //Versionamento da API
             builder.Services.AddApiVersioning();
 
             //Injetando dependencia
-            builder.Services.AddScoped<IPersonService, PersonServiceImplementation>();
+            builder.Services.AddScoped<IPersonRepository, PersonRepositoryImplementation>();
+            builder.Services.AddScoped<IPersonBusiness, PersonBusinessImplementation>();
 
             var app = builder.Build();
 
