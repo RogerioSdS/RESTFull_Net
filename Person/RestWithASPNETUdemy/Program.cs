@@ -36,6 +36,8 @@ namespace RestWithASPNETUdemy
             //Injetando dependencia
             builder.Services.AddScoped<IPersonRepository, PersonRepositoryImplementation>();
             builder.Services.AddScoped<IPersonBusiness, PersonBusinessImplementation>();
+            builder.Services.AddScoped<IBookBusiness, BookBusinessImplementation>();
+            builder.Services.AddScoped<IBookRepository, BookRepositoryImplementation>();
 
             var app = builder.Build();
 
