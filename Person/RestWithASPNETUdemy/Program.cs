@@ -6,7 +6,6 @@ using RestWithASPNETUdemy.Business.Implementations;
 using RestWithASPNETUdemy.Model.Context;
 using RestWithASPNETUdemy.Repository;
 using RestWithASPNETUdemy.Repository.Generic;
-using RestWithASPNETUdemy.Repository.Implementations;
 using Serilog;
 
 namespace RestWithASPNETUdemy
@@ -35,7 +34,6 @@ namespace RestWithASPNETUdemy
             builder.Services.AddApiVersioning();
 
             //Injetando dependencia
-            builder.Services.AddScoped<IPersonRepository, PersonRepositoryImplementation>();
             builder.Services.AddScoped<IPersonBusiness, PersonBusinessImplementation>();
             builder.Services.AddScoped<IBookBusiness, BookBusinessImplementation>();
             builder.Services.AddScoped( typeof(IRepository<>) , typeof(GenericRepository<>));
