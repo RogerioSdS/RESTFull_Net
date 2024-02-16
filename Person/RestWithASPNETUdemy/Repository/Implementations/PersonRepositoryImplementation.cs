@@ -5,7 +5,6 @@ namespace RestWithASPNETUdemy.Repository.Implementations
 {
     public class PersonRepositoryImplementation : IPersonRepository
     {
-
         private MySQLContext _context;
 
         public PersonRepositoryImplementation(MySQLContext context)

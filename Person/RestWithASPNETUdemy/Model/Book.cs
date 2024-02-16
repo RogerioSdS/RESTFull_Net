@@ -1,12 +1,11 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using RestWithASPNETUdemy.Model.Base;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace RestWithASPNETUdemy.Model
 {
     [Table("books")]//referenciando o nome da tabela que será usada no db
-    public class Book
-    {
-        [Column("id")]//referenciando o nome da coluna que será usada no db
-        public long Id { get; set; }
+    public class Book : BaseEntity
+    {        
         [Column("launch_date")]
         public DateTime Launch_Date { get; set; }
         [Column("author")]
