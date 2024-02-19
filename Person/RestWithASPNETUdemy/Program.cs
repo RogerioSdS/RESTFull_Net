@@ -7,6 +7,7 @@ using RestWithASPNETUdemy.Model.Context;
 using RestWithASPNETUdemy.Repository;
 using RestWithASPNETUdemy.Repository.Generic;
 using Serilog;
+using System.Net.Http.Headers;
 
 namespace RestWithASPNETUdemy
 {
@@ -30,6 +31,13 @@ namespace RestWithASPNETUdemy
                 MigrateDatabase(connection);
             }
 
+            builder.Services.AddMvc(options =>
+            {
+                //é necessário incluir no header do client o content-type e o accept ambos como applicatio/xml
+                options.RespectBrowserAcceptHeader = true;//opção que habilita aceitar o formato XML no cabeçalho da Request
+                options.FormatterMappings.SetMediaTypeMappingForFormat("xml", MediaTypeHeaderValue.Parse("application/xml").ToString());
+                options.FormatterMappings.SetMediaTypeMappingForFormat("json", MediaTypeHeaderValue.Parse("application/json").ToString());
+            }).AddXmlSerializerFormatters();
             //Versionamento da API
             builder.Services.AddApiVersioning();
 
