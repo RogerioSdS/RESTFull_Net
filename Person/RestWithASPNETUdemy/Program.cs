@@ -3,6 +3,8 @@ using Microsoft.EntityFrameworkCore;
 using MySqlConnector;
 using RestWithASPNETUdemy.Business;
 using RestWithASPNETUdemy.Business.Implementations;
+using RestWithASPNETUdemy.Hypermedia.Enricher;
+using RestWithASPNETUdemy.Hypermedia.Filters;
 using RestWithASPNETUdemy.Model.Context;
 using RestWithASPNETUdemy.Repository;
 using RestWithASPNETUdemy.Repository.Generic;
@@ -38,6 +40,13 @@ namespace RestWithASPNETUdemy
                 options.FormatterMappings.SetMediaTypeMappingForFormat("xml", MediaTypeHeaderValue.Parse("application/xml").ToString());
                 options.FormatterMappings.SetMediaTypeMappingForFormat("json", MediaTypeHeaderValue.Parse("application/json").ToString());
             }).AddXmlSerializerFormatters();
+
+            var filterOptions = new HyperMediaFilterOptions();
+            filterOptions.ContentResponseEnricherList.Add(new PersonEnricher());
+            filterOptions.ContentResponseEnricherList.Add(new BookEnricher());
+
+            builder.Services.AddSingleton(filterOptions);
+
             //Versionamento da API
             builder.Services.AddApiVersioning();
 
@@ -55,6 +64,8 @@ namespace RestWithASPNETUdemy
             app.UseAuthorization();
 
             app.MapControllers();
+
+            app.MapControllerRoute("DefaultAPI", "v{version=apiVersion}/{controller=values}/{id?}");
 
             app.Run();
 
