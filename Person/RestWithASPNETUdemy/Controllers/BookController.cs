@@ -21,7 +21,11 @@ namespace RestWithASPNETUdemy.Controllers
         }
 
         [HttpGet]
-        [TypeFilter(typeof(HyperMediaFilter))]
+        [ProducesResponseType(200, Type = typeof(List<BookVO>))]//Relativo ao tipo de tratamento que vamos apresentar no Swagger
+        [ProducesResponseType(204)]//Relativo ao tipo de tratamento que vamos apresentar no Swagger
+        [ProducesResponseType(400)]//Relativo ao tipo de tratamento que vamos apresentar no Swagger
+        [ProducesResponseType(401)]//Relativo ao tipo de tratamento que vamos apresentar no Swagger
+        [TypeFilter(typeof(HyperMediaFilter))]//Relativo ao HATEOAS
         public IActionResult Get()
         {
             return Ok(_bookBusiness.FindAll());
@@ -29,7 +33,11 @@ namespace RestWithASPNETUdemy.Controllers
         }
 
         [HttpGet("{id}")]
-        [TypeFilter(typeof(HyperMediaFilter))]
+        [ProducesResponseType(200, Type = typeof(BookVO))]//Relativo ao tipo de tratamento que vamos apresentar no Swagger
+        [ProducesResponseType(204)]//Relativo ao tipo de tratamento que vamos apresentar no Swagger
+        [ProducesResponseType(400)]//Relativo ao tipo de tratamento que vamos apresentar no Swagger
+        [ProducesResponseType(401)]//Relativo ao tipo de tratamento que vamos apresentar no Swagger
+        [TypeFilter(typeof(HyperMediaFilter))]//Relativo ao HATEOAS
         public IActionResult Get(long id)
         {
             var person = _bookBusiness.FindById(id);
@@ -38,7 +46,10 @@ namespace RestWithASPNETUdemy.Controllers
         }
 
         [HttpPost()]
-        [TypeFilter(typeof(HyperMediaFilter))]
+        [ProducesResponseType(200, Type = typeof(BookVO))]//Relativo ao tipo de tratamento que vamos apresentar no Swagger
+        [ProducesResponseType(400)]//Relativo ao tipo de tratamento que vamos apresentar no Swagger
+        [ProducesResponseType(401)]//Relativo ao tipo de tratamento que vamos apresentar no Swagger
+        [TypeFilter(typeof(HyperMediaFilter))]//Relativo ao HATEOAS
         public IActionResult Post([FromBody] BookVO book)
         {
             if (book == null) return BadRequest();
@@ -46,7 +57,10 @@ namespace RestWithASPNETUdemy.Controllers
         }
 
         [HttpPut()]
-        [TypeFilter(typeof(HyperMediaFilter))]
+        [ProducesResponseType(200, Type = typeof(BookVO))]//Relativo ao tipo de tratamento que vamos apresentar no Swagger
+        [ProducesResponseType(400)]//Relativo ao tipo de tratamento que vamos apresentar no Swagger
+        [ProducesResponseType(401)]//Relativo ao tipo de tratamento que vamos apresentar no Swagger
+        [TypeFilter(typeof(HyperMediaFilter))]//Relativo ao HATEOAS
         public IActionResult Put([FromBody] BookVO book)
         {
             if (book == null) return BadRequest();
@@ -54,6 +68,9 @@ namespace RestWithASPNETUdemy.Controllers
         }
 
         [HttpDelete("{id}")]
+        [ProducesResponseType(204)]//Relativo ao tipo de tratamento que vamos apresentar no Swagger
+        [ProducesResponseType(400)]//Relativo ao tipo de tratamento que vamos apresentar no Swagger
+        [ProducesResponseType(401)]//Relativo ao tipo de tratamento que vamos apresentar no Swagger
         public IActionResult Delete(long id)
         {
             _bookBusiness.Delete(id);

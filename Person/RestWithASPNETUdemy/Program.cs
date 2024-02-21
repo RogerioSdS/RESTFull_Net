@@ -1,5 +1,7 @@
 using EvolveDb;
+using Microsoft.AspNetCore.Rewrite;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.OpenApi.Models;
 using MySqlConnector;
 using RestWithASPNETUdemy.Business;
 using RestWithASPNETUdemy.Business.Implementations;
@@ -20,9 +22,33 @@ namespace RestWithASPNETUdemy
         {
             var builder = WebApplication.CreateBuilder(args);
 
+            var appName = "API RESTFull";
+            var appVersion = "v1";
+            var appDescription = $"Desenvolvendo API RESTFull com Azure, ASP.NET Core 8 e Docker";
+
             // Add services to the container.
+            builder.Services.AddRouting(options => options.LowercaseUrls = true);
 
             builder.Services.AddControllers();
+
+            builder.Services.AddEndpointsApiExplorer();
+
+            builder.Services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc(appVersion,
+                    new OpenApiInfo
+                    {
+                        Title = appName,
+                        Version = appVersion,
+                        Description = appDescription,
+                        Contact = new OpenApiContact
+                        {
+                            Name = "Rogerio Soares (GitHub)",
+                            Url = new Uri("https://github.com/RogerioSdS/RESTFull_Net")
+                        }
+                    });
+            });
+
             var connection = builder.Configuration["MySQLConnection:MySQLConnectionString"];
             builder.Services.AddDbContext<MySQLContext>(options => options.UseMySql(connection,
                 new MySqlServerVersion(new Version(8, 0, 36)
@@ -53,13 +79,20 @@ namespace RestWithASPNETUdemy
             //Injetando dependencia
             builder.Services.AddScoped<IPersonBusiness, PersonBusinessImplementation>();
             builder.Services.AddScoped<IBookBusiness, BookBusinessImplementation>();
-            builder.Services.AddScoped( typeof(IRepository<>) , typeof(GenericRepository<>));
+            builder.Services.AddScoped(typeof(IRepository<>), typeof(GenericRepository<>));
 
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
 
             app.UseHttpsRedirection();
+            app.UseSwagger();
+
+            app.UseSwaggerUI(c => { c.SwaggerEndpoint("/swagger/v1/swagger.json", $"{appName} - {appVersion}"); });
+
+            var option = new RewriteOptions();
+            option.AddRedirect("^$", "swagger");
+            app.UseRewriter(option);
 
             app.UseAuthorization();
 
