@@ -79,6 +79,11 @@ namespace RestWithASPNETUdemy
             //Injetando dependencia
             builder.Services.AddScoped<IPersonBusiness, PersonBusinessImplementation>();
             builder.Services.AddScoped<IBookBusiness, BookBusinessImplementation>();
+            builder.Services.AddScoped<ILoginBusiness, LoginBusinessImplementation>();
+
+            builder.Services.AddTransient<ITokenService, TokenService>();
+
+            builder.Services.AddScoped<IUserRepository, UserRepository>();
             builder.Services.AddScoped(typeof(IRepository<>), typeof(GenericRepository<>));
 
             var app = builder.Build();
