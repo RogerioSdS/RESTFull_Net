@@ -1,8 +1,6 @@
-﻿using Asp.Versioning;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using RestWithASPNETUdemy.Data.VO;
 using RestWithASPNETUdemy.Hypermedia.Constants;
-using System;
 using System.Text;
 
 namespace RestWithASPNETUdemy.Hypermedia.Enricher
@@ -12,8 +10,7 @@ namespace RestWithASPNETUdemy.Hypermedia.Enricher
         protected override Task EnrichModel(PersonVO content, IUrlHelper urlHelper)
         {
             var path = "api/person";
-            string link = GetLink(content.Id, urlHelper, path);
-
+            string link = GetLink(urlHelper, path, content.Id);
             content.Links.Add(new HyperMediaLink()
             {
                 Action = HttpActionVerb.GET,
@@ -21,6 +18,8 @@ namespace RestWithASPNETUdemy.Hypermedia.Enricher
                 Rel = RelationType.self,
                 Type = ResponseTypeFormat.DefaultGet
             });
+
+            link = GetLink(urlHelper, path, null);
             content.Links.Add(new HyperMediaLink()
             {
                 Action = HttpActionVerb.POST,
@@ -28,6 +27,8 @@ namespace RestWithASPNETUdemy.Hypermedia.Enricher
                 Rel = RelationType.self,
                 Type = ResponseTypeFormat.DefaultPost
             });
+
+            link = GetLink(urlHelper, path, null);
             content.Links.Add(new HyperMediaLink()
             {
                 Action = HttpActionVerb.PUT,
@@ -35,6 +36,8 @@ namespace RestWithASPNETUdemy.Hypermedia.Enricher
                 Rel = RelationType.self,
                 Type = ResponseTypeFormat.DefaultPut
             });
+
+            link = GetLink(urlHelper, path, content.Id);
             content.Links.Add(new HyperMediaLink()
             {
                 Action = HttpActionVerb.DELETE,
@@ -45,7 +48,7 @@ namespace RestWithASPNETUdemy.Hypermedia.Enricher
             return Task.CompletedTask;
         }
 
-        private string GetLink(long id, IUrlHelper urlHelper, string path)
+        private string GetLink(IUrlHelper urlHelper, string path, long? id)
         {
             lock (this)
             {
