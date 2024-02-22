@@ -29,6 +29,11 @@ namespace RestWithASPNETUdemy
             // Add services to the container.
             builder.Services.AddRouting(options => options.LowercaseUrls = true);
 
+            builder.Services.AddCors(options => options.AddDefaultPolicy(builder =>
+            {
+                builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
+            }));
+
             builder.Services.AddControllers();
 
             builder.Services.AddEndpointsApiExplorer();
@@ -86,6 +91,9 @@ namespace RestWithASPNETUdemy
             // Configure the HTTP request pipeline.
 
             app.UseHttpsRedirection();
+
+            app.UseCors();//Adicionando o CORS - sistema de consulta cross plataforma, o que impede de haver problemas quando o client tem um dominio ou protocolo diferente da nossa API
+
             app.UseSwagger();
 
             app.UseSwaggerUI(c => { c.SwaggerEndpoint("/swagger/v1/swagger.json", $"{appName} - {appVersion}"); });
