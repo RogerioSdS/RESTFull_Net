@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace RestWithASPNETUdemy.Model
@@ -6,7 +7,7 @@ namespace RestWithASPNETUdemy.Model
     [Table("users")]
     public class User
     {
-        [Key]//anotando que será a primaryKey
+        [Key]
         [Column("id")]
         public long Id { get; set; }
 
@@ -24,6 +25,5 @@ namespace RestWithASPNETUdemy.Model
 
         [Column("refresh_token_expiry_time")]
         public DateTime RefreshTokenExpiryTime { get; set; }
-
     }
 }

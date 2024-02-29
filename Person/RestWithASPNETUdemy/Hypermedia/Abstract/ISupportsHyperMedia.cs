@@ -1,4 +1,6 @@
-﻿namespace RestWithASPNETUdemy.Hypermedia.Abstract
+﻿using System.Collections.Generic;
+
+namespace RestWithASPNETUdemy.Hypermedia.Abstract
 {
     public interface ISupportsHyperMedia
     {

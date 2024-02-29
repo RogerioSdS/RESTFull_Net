@@ -7,26 +7,12 @@ namespace RestWithASPNETUdemy.Repository.Generic
     public class GenericRepository<T> : IRepository<T> where T : BaseEntity
     {
         protected MySQLContext _context;
-        private DbSet<T> dataset;
 
+        private DbSet<T> dataset;
         public GenericRepository(MySQLContext context)
         {
             _context = context;
             dataset = _context.Set<T>();
-        }
-
-        public T Create(T item)
-        {
-            try
-            {
-                _context.Add(item);
-                _context.SaveChanges();
-                return item;
-            }
-            catch (Exception)
-            {
-                throw;
-            }
         }
 
         public List<T> FindAll()
@@ -34,9 +20,23 @@ namespace RestWithASPNETUdemy.Repository.Generic
             return dataset.ToList();
         }
 
-        public T FindById(long id)
+        public T FindByID(long id)
         {
             return dataset.SingleOrDefault(p => p.Id.Equals(id));
+        }
+
+        public T Create(T item)
+        {
+            try
+            {
+                dataset.Add(item);
+                _context.SaveChanges();
+                return item;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
 
         public T Update(T item)
@@ -48,7 +48,6 @@ namespace RestWithASPNETUdemy.Repository.Generic
                 {
                     _context.Entry(result).CurrentValues.SetValues(item);
                     _context.SaveChanges();
-
                     return result;
                 }
                 catch (Exception)
@@ -60,11 +59,6 @@ namespace RestWithASPNETUdemy.Repository.Generic
             {
                 return null;
             }
-        }
-
-        public bool Exists(long id)
-        {
-            return dataset.Any(p => p.Id.Equals(id));
         }
 
         public void Delete(long id)
@@ -82,6 +76,31 @@ namespace RestWithASPNETUdemy.Repository.Generic
                     throw;
                 }
             }
+        }
+
+        public bool Exists(long id)
+        {
+            return dataset.Any(p => p.Id.Equals(id));
+        }
+
+        public List<T> FindWithPagedSearch(string query)
+        {
+            return dataset.FromSqlRaw<T>(query).ToList();
+        }
+
+        public int GetCount(string query)
+        {
+            var result = "";
+            using (var connection = _context.Database.GetDbConnection())
+            {
+                connection.Open();
+                using (var command = connection.CreateCommand())
+                {
+                    command.CommandText = query;
+                    result = command.ExecuteScalar().ToString();
+                }
+            }
+            return int.Parse(result);
         }
     }
 }

@@ -37,7 +37,7 @@ namespace RestWithASPNETUdemy.Hypermedia.Enricher
                 Type = ResponseTypeFormat.DefaultPut
             });
 
-            link = GetLink(urlHelper, path, null);
+            link = GetLink(urlHelper, path, content.Id);
             content.Links.Add(new HyperMediaLink()
             {
                 Action = HttpActionVerb.PATCH,
@@ -67,3 +67,4 @@ namespace RestWithASPNETUdemy.Hypermedia.Enricher
         }
     }
 }
+
