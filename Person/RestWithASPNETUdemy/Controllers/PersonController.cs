@@ -14,16 +14,22 @@ namespace RestWithASPNETUdemy.Controllers
     public class PersonController : ControllerBase
     {
         private readonly ILogger<PersonController> _logger;
+
+        // Declaration of the service used
         private IPersonBusiness _personBusiness;
 
+        // Injection of an instance of IPersonService
+        // when creating an instance of PersonController
         public PersonController(ILogger<PersonController> logger, IPersonBusiness personBusiness)
         {
             _logger = logger;
             _personBusiness = personBusiness;
         }
 
+        // Maps GET requests to https://localhost:{port}/api/person
+        // Get no parameters for FindAll -> Search All
         [HttpGet]
-        [ProducesResponseType(200, Type = typeof(List<PersonVO>))]
+        [ProducesResponseType((200), Type = typeof(List<PersonVO>))]
         [ProducesResponseType(204)]
         [ProducesResponseType(400)]
         [ProducesResponseType(401)]
@@ -31,24 +37,28 @@ namespace RestWithASPNETUdemy.Controllers
         public IActionResult Get()
         {
             return Ok(_personBusiness.FindAll());
-
         }
 
+        // Maps GET requests to https://localhost:{port}/api/person/{id}
+        // receiving an ID as in the Request Path
+        // Get with parameters for FindById -> Search by ID
         [HttpGet("{id}")]
-        [TypeFilter(typeof(HyperMediaFilter))]
-        [ProducesResponseType(200, Type = typeof(PersonVO))]
+        [ProducesResponseType((200), Type = typeof(PersonVO))]
         [ProducesResponseType(204)]
         [ProducesResponseType(400)]
         [ProducesResponseType(401)]
+        [TypeFilter(typeof(HyperMediaFilter))]
         public IActionResult Get(long id)
         {
-            var person = _personBusiness.FindById(id);
+            var person = _personBusiness.FindByID(id);
             if (person == null) return NotFound();
             return Ok(person);
         }
 
-        [HttpPost()]
-        [ProducesResponseType(200, Type = typeof(PersonVO))]
+        // Maps POST requests to https://localhost:{port}/api/person/
+        // [FromBody] consumes the JSON object sent in the request body
+        [HttpPost]
+        [ProducesResponseType((200), Type = typeof(PersonVO))]
         [ProducesResponseType(400)]
         [ProducesResponseType(401)]
         [TypeFilter(typeof(HyperMediaFilter))]
@@ -58,8 +68,10 @@ namespace RestWithASPNETUdemy.Controllers
             return Ok(_personBusiness.Create(person));
         }
 
-        [HttpPut()]
-        [ProducesResponseType(200, Type = typeof(PersonVO))]
+        // Maps PUT requests to https://localhost:{port}/api/person/
+        // [FromBody] consumes the JSON object sent in the request body
+        [HttpPut]
+        [ProducesResponseType((200), Type = typeof(PersonVO))]
         [ProducesResponseType(400)]
         [ProducesResponseType(401)]
         [TypeFilter(typeof(HyperMediaFilter))]
@@ -69,6 +81,20 @@ namespace RestWithASPNETUdemy.Controllers
             return Ok(_personBusiness.Update(person));
         }
 
+        [HttpPatch("{id}")]
+        [ProducesResponseType((200), Type = typeof(PersonVO))]
+        [ProducesResponseType(204)]
+        [ProducesResponseType(400)]
+        [ProducesResponseType(401)]
+        [TypeFilter(typeof(HyperMediaFilter))]
+        public IActionResult Patch(long id)
+        {
+            var person = _personBusiness.Disable(id);
+            return Ok(person);
+        }
+
+        // Maps DELETE requests to https://localhost:{port}/api/person/{id}
+        // receiving an ID as in the Request Path
         [HttpDelete("{id}")]
         [ProducesResponseType(204)]
         [ProducesResponseType(400)]
@@ -78,6 +104,5 @@ namespace RestWithASPNETUdemy.Controllers
             _personBusiness.Delete(id);
             return NoContent();
         }
-
     }
 }

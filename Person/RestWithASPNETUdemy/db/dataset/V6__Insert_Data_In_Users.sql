@@ -1,0 +1,2 @@
+﻿INSERT INTO `users` (`user_name`, `password`, `full_name`, `refresh_token`, `refresh_token_expiry_time`) VALUES
+('rogerio', 'da1a51f975cd750be255d21548eaae1dbaa96ffc997283a6a204f9213a8aca71', 'ROGERIO SOARES DOS SANTOS', 'h9lzVOoLlBoTbcQrh/e16/aIj+4p6C67lLdDbBRMsjE=', '2020-09-27 17:30:49');

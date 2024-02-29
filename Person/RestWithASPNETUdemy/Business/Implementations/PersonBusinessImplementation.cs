@@ -7,10 +7,12 @@ namespace RestWithASPNETUdemy.Business.Implementations
 {
     public class PersonBusinessImplementation : IPersonBusiness
     {
-        private readonly IRepository<Person> _repository;
+
+        private readonly IPersonRepository _repository;
+
         private readonly PersonConverter _converter;
 
-        public PersonBusinessImplementation(IRepository<Person> repository)
+        public PersonBusinessImplementation(IPersonRepository repository)
         {
             _repository = repository;
             _converter = new PersonConverter();
@@ -23,9 +25,9 @@ namespace RestWithASPNETUdemy.Business.Implementations
         }
 
         // Method responsible for returning one person by ID
-        public PersonVO FindById(long id)
+        public PersonVO FindByID(long id)
         {
-            return _converter.Parse(_repository.FindById(id));
+            return _converter.Parse(_repository.FindByID(id));
         }
 
         // Method responsible to crete one new person
@@ -44,10 +46,27 @@ namespace RestWithASPNETUdemy.Business.Implementations
             return _converter.Parse(personEntity);
         }
 
+        // Method responsible for disable a person from an ID
+        public PersonVO Disable(long id)
+        {
+            var personEntity = _repository.Disable(id);
+            return _converter.Parse(personEntity);
+        }
+
         // Method responsible for deleting a person from an ID
         public void Delete(long id)
         {
             _repository.Delete(id);
+        }
+
+        Person IPersonBusiness.FindByID(long id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object FindById(long id)
+        {
+            throw new NotImplementedException();
         }
     }
 }
