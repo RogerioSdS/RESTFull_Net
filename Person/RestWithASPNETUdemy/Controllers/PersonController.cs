@@ -1,18 +1,19 @@
-using Asp.Versioning;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
+﻿using Asp.Versioning;
 using RestWithASPNETUdemy.Business;
+using Microsoft.AspNetCore.Mvc;
 using RestWithASPNETUdemy.Data.VO;
 using RestWithASPNETUdemy.Hypermedia.Filters;
+using Microsoft.AspNetCore.Authorization;
 
 namespace RestWithASPNETUdemy.Controllers
 {
     [ApiVersion("1")]
     [ApiController]
     [Authorize("Bearer")]
-    [Route("v{version:apiVersion}/api/[controller]")]
+    [Route("api/[controller]/v{version:apiVersion}")]
     public class PersonController : ControllerBase
     {
+
         private readonly ILogger<PersonController> _logger;
 
         // Declaration of the service used
@@ -28,15 +29,19 @@ namespace RestWithASPNETUdemy.Controllers
 
         // Maps GET requests to https://localhost:{port}/api/person
         // Get no parameters for FindAll -> Search All
-        [HttpGet]
+        [HttpGet("{sortDirection}/{pageSize}/{page}")]
         [ProducesResponseType((200), Type = typeof(List<PersonVO>))]
         [ProducesResponseType(204)]
         [ProducesResponseType(400)]
         [ProducesResponseType(401)]
         [TypeFilter(typeof(HyperMediaFilter))]
-        public IActionResult Get()
+        public IActionResult Get(
+            [FromQuery] string? name,
+            string sortDirection,
+            int pageSize,
+            int page)
         {
-            return Ok(_personBusiness.FindAll());
+            return Ok(_personBusiness.FindWithPagedSearch(name, sortDirection, pageSize, page));
         }
 
         // Maps GET requests to https://localhost:{port}/api/person/{id}
@@ -51,6 +56,19 @@ namespace RestWithASPNETUdemy.Controllers
         public IActionResult Get(long id)
         {
             var person = _personBusiness.FindByID(id);
+            if (person == null) return NotFound();
+            return Ok(person);
+        } 
+        
+        [HttpGet("findPersonByName")]
+        [ProducesResponseType((200), Type = typeof(PersonVO))]
+        [ProducesResponseType(204)]
+        [ProducesResponseType(400)]
+        [ProducesResponseType(401)]
+        [TypeFilter(typeof(HyperMediaFilter))]
+        public IActionResult Get([FromQuery] string firstName, [FromQuery] string lastName)
+        {
+            var person = _personBusiness.FindByName(firstName, lastName);
             if (person == null) return NotFound();
             return Ok(person);
         }

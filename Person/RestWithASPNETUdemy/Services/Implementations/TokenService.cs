@@ -35,8 +35,7 @@ namespace RestWithASPNETUdemy.Services.Implementations
         public string GenerateRefreshToken()
         {
             var randomNumber = new byte[32];
-            using (var rng = RandomNumberGenerator.Create())
-            {
+            using (var rng = RandomNumberGenerator.Create()) {
                 rng.GetBytes(randomNumber);
                 return Convert.ToBase64String(randomNumber);
             };
@@ -44,8 +43,7 @@ namespace RestWithASPNETUdemy.Services.Implementations
 
         public ClaimsPrincipal GetPrincipalFromExpiredToken(string token)
         {
-            var tokenValidationParameters = new TokenValidationParameters
-            {
+            var tokenValidationParameters = new TokenValidationParameters{
                 ValidateAudience = false,
                 ValidateIssuer = false,
                 ValidateIssuerSigningKey = true,
