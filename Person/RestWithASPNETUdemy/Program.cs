@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Rewrite;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
@@ -125,13 +126,16 @@ namespace RestWithASPNETUdemy
             builder.Services.AddApiVersioning();
 
             //Injetando dependencia
+            builder.Services.TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             builder.Services.AddScoped<IPersonBusiness, PersonBusinessImplementation>();
             builder.Services.AddScoped<IBookBusiness, BookBusinessImplementation>();
             builder.Services.AddScoped<ILoginBusiness, LoginBusinessImplementation>();
             builder.Services.AddScoped<IPersonRepository, PersonRepository>();
-            builder.Services.AddTransient<ITokenService, TokenService>();
             builder.Services.AddScoped<IUserRepository, UserRepository>();
+            builder.Services.AddScoped<IFileBusiness, FileBusinessImplementation>();
             builder.Services.AddScoped(typeof(IRepository<>), typeof(GenericRepository<>));
+
+            builder.Services.AddTransient<ITokenService, TokenService>();
 
             var app = builder.Build();
 
