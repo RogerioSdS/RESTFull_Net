@@ -36,7 +36,7 @@ namespace RestWithASPNETUdemy.Controllers
         [ProducesResponseType(401)]
         [TypeFilter(typeof(HyperMediaFilter))]
         public IActionResult Get(
-            [FromQuery] string name,
+            [FromQuery] string? name,
             string sortDirection,
             int pageSize,
             int page)

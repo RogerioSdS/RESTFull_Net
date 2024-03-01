@@ -32,7 +32,7 @@ namespace RestWithASPNETUdemy
 
             var appName = "API RESTFull";
             var appVersion = "v1";
-            var appDescription = $"Desenvolvendo API RESTFull com Azure, ASP.NET Core 8 e Docker";
+            var appDescription = $"API RESTFull com Azure, ASP.NET Core 8 e Docker";
 
             // Add services to the container.
             builder.Services.AddRouting(options => options.LowercaseUrls = true);
