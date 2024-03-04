@@ -1,6 +1,8 @@
 ﻿using RestWithASPNETUdemy.Data.Converter.Contract;
 using RestWithASPNETUdemy.Data.VO;
 using RestWithASPNETUdemy.Model;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace RestWithASPNETUdemy.Data.Converter.Implementations
 {
@@ -15,8 +17,7 @@ namespace RestWithASPNETUdemy.Data.Converter.Implementations
                 FirstName = origin.FirstName,
                 LastName = origin.LastName,
                 Address = origin.Address,
-                Gender = origin.Gender,
-                Enabled = origin.Enabled
+                Gender = origin.Gender
             };
         }
 
@@ -29,8 +30,7 @@ namespace RestWithASPNETUdemy.Data.Converter.Implementations
                 FirstName = origin.FirstName,
                 LastName = origin.LastName,
                 Address = origin.Address,
-                Gender = origin.Gender,
-                Enabled = origin.Enabled
+                Gender = origin.Gender
             };
         }
 

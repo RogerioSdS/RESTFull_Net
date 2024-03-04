@@ -1,6 +1,8 @@
 ﻿using RestWithASPNETUdemy.Data.VO;
 using RestWithASPNETUdemy.Model;
 using RestWithASPNETUdemy.Model.Context;
+using System;
+using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 
@@ -15,13 +17,13 @@ namespace RestWithASPNETUdemy.Repository
             _context = context;
         }
 
-        public User? ValidateCredentials(UserVO user)
+        public User ValidateCredentials(UserVO user)
         {
-            var pass = ComputeHash(user.Password, SHA256.Create());
+            var pass = ComputeHash(user.Password, new SHA256CryptoServiceProvider());
             return _context.Users.FirstOrDefault(u => (u.UserName == user.UserName) && (u.Password == pass));
         }
 
-        public User? ValidateCredentials(string userName)
+        public User ValidateCredentials(string userName)
         {
             return _context.Users.SingleOrDefault(u => (u.UserName == userName));
         }
@@ -35,7 +37,7 @@ namespace RestWithASPNETUdemy.Repository
             return true;
         }
 
-        public User? RefreshUserInfo(User user)
+        public User RefreshUserInfo(User user)
         {
             if (!_context.Users.Any(u => u.Id.Equals(user.Id))) return null;
 
@@ -56,18 +58,11 @@ namespace RestWithASPNETUdemy.Repository
             return result;
         }
 
-        private string ComputeHash(string input, HashAlgorithm algorithm)
+        private string ComputeHash(string input, SHA256CryptoServiceProvider algorithm)
         {
-            byte[] inputBytes = Encoding.UTF8.GetBytes(input);
-            byte[] hashedBytes = algorithm.ComputeHash(inputBytes);
-
-            var builder = new StringBuilder();
-
-            foreach (var item in hashedBytes)
-            {
-                builder.Append(item.ToString("x2"));
-            }
-            return builder.ToString();
+            Byte[] inputBytes = Encoding.UTF8.GetBytes(input);
+            Byte[] hashedBytes = algorithm.ComputeHash(inputBytes);
+            return BitConverter.ToString(hashedBytes);
         }
 
     }

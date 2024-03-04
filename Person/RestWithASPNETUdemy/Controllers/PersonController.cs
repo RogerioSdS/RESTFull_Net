@@ -1,12 +1,14 @@
-﻿using Asp.Versioning;
-using RestWithASPNETUdemy.Business;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
+using RestWithASPNETUdemy.Business;
 using RestWithASPNETUdemy.Data.VO;
 using RestWithASPNETUdemy.Hypermedia.Filters;
-using Microsoft.AspNetCore.Authorization;
+using System.Collections.Generic;
 
 namespace RestWithASPNETUdemy.Controllers
 {
+
     [ApiVersion("1")]
     [ApiController]
     [Authorize("Bearer")]
@@ -36,7 +38,7 @@ namespace RestWithASPNETUdemy.Controllers
         [ProducesResponseType(401)]
         [TypeFilter(typeof(HyperMediaFilter))]
         public IActionResult Get(
-            [FromQuery] string? name,
+            [FromQuery] string name,
             string sortDirection,
             int pageSize,
             int page)

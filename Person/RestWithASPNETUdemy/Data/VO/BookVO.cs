@@ -1,5 +1,7 @@
 ﻿using RestWithASPNETUdemy.Hypermedia;
 using RestWithASPNETUdemy.Hypermedia.Abstract;
+using System;
+using System.Collections.Generic;
 
 namespace RestWithASPNETUdemy.Data.VO
 {

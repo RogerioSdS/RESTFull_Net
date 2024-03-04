@@ -1,6 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using RestWithASPNETUdemy.Model.Base;
 using RestWithASPNETUdemy.Model.Context;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace RestWithASPNETUdemy.Repository.Generic
 {
