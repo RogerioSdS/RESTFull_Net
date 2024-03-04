@@ -102,11 +102,11 @@ namespace RestWithASPNETUdemy
             builder.Services.AddDbContext<MySQLContext>(options => options.UseMySql(connection,
                 new MySqlServerVersion(new Version(8, 0, 36)
                 )));
-
+            /*
             if (builder.Environment.IsDevelopment())
             {
                 MigrateDatabase(connection);
-            }
+            }*/
 
             builder.Services.AddMvc(options =>
             {
