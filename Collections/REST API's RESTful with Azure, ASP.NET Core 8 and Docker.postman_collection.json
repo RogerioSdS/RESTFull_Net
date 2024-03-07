@@ -58,9 +58,9 @@
 											}
 										},
 										"url": {
-											"raw": "{{baseUrl}}/api/auth/v1/refresh",
+											"raw": "{{baseUrlDocker}}/api/auth/v1/refresh",
 											"host": [
-												"{{baseUrl}}"
+												"{{baseUrlDocker}}"
 											],
 											"path": [
 												"api",
@@ -82,9 +82,9 @@
 													}
 												],
 												"url": {
-													"raw": "{{baseUrl}}/api/person/v{{version}}",
+													"raw": "{{baseUrlDocker}}/api/person/v{{version}}",
 													"host": [
-														"{{baseUrl}}"
+														"{{baseUrlDocker}}"
 													],
 													"path": [
 														"api",
@@ -111,9 +111,9 @@
 												"method": "GET",
 												"header": [],
 												"url": {
-													"raw": "{{baseUrl}}/api/person/v{{version}}",
+													"raw": "{{baseUrlDocker}}/api/person/v{{version}}",
 													"host": [
-														"{{baseUrl}}"
+														"{{baseUrlDocker}}"
 													],
 													"path": [
 														"api",
@@ -140,9 +140,9 @@
 													}
 												],
 												"url": {
-													"raw": "{{baseUrl}}/api/person/v{{version}}",
+													"raw": "{{baseUrlDocker}}/api/person/v{{version}}",
 													"host": [
-														"{{baseUrl}}"
+														"{{baseUrlDocker}}"
 													],
 													"path": [
 														"api",
@@ -174,9 +174,9 @@
 													}
 												],
 												"url": {
-													"raw": "{{baseUrl}}/api/person/v{{version}}",
+													"raw": "{{baseUrlDocker}}/api/person/v{{version}}",
 													"host": [
-														"{{baseUrl}}"
+														"{{baseUrlDocker}}"
 													],
 													"path": [
 														"api",
@@ -241,9 +241,9 @@
 											}
 										},
 										"url": {
-											"raw": "{{baseUrl}}/api/auth/v1/revoke",
+											"raw": "{{baseUrlDocker}}/api/auth/v1/revoke",
 											"host": [
-												"{{baseUrl}}"
+												"{{baseUrlDocker}}"
 											],
 											"path": [
 												"api",
@@ -265,9 +265,9 @@
 													}
 												],
 												"url": {
-													"raw": "{{baseUrl}}/api/person/v{{version}}",
+													"raw": "{{baseUrlDocker}}/api/person/v{{version}}",
 													"host": [
-														"{{baseUrl}}"
+														"{{baseUrlDocker}}"
 													],
 													"path": [
 														"api",
@@ -294,9 +294,9 @@
 												"method": "GET",
 												"header": [],
 												"url": {
-													"raw": "{{baseUrl}}/api/person/v{{version}}",
+													"raw": "{{baseUrlDocker}}/api/person/v{{version}}",
 													"host": [
-														"{{baseUrl}}"
+														"{{baseUrlDocker}}"
 													],
 													"path": [
 														"api",
@@ -323,9 +323,9 @@
 													}
 												],
 												"url": {
-													"raw": "{{baseUrl}}/api/person/v{{version}}",
+													"raw": "{{baseUrlDocker}}/api/person/v{{version}}",
 													"host": [
-														"{{baseUrl}}"
+														"{{baseUrlDocker}}"
 													],
 													"path": [
 														"api",
@@ -357,9 +357,9 @@
 													}
 												],
 												"url": {
-													"raw": "{{baseUrl}}/api/person/v{{version}}",
+													"raw": "{{baseUrlDocker}}/api/person/v{{version}}",
 													"host": [
-														"{{baseUrl}}"
+														"{{baseUrlDocker}}"
 													],
 													"path": [
 														"api",
@@ -424,9 +424,9 @@
 											}
 										},
 										"url": {
-											"raw": "{{baseUrl}}/api/auth/v{{version}}/signin",
+											"raw": "{{baseUrlDocker}}/api/auth/v{{version}}/signin",
 											"host": [
-												"{{baseUrl}}"
+												"{{baseUrlDocker}}"
 											],
 											"path": [
 												"api",
@@ -448,9 +448,9 @@
 													}
 												],
 												"url": {
-													"raw": "{{baseUrl}}/api/person/v{{version}}",
+													"raw": "{{baseUrlDocker}}/api/person/v{{version}}",
 													"host": [
-														"{{baseUrl}}"
+														"{{baseUrlDocker}}"
 													],
 													"path": [
 														"api",
@@ -477,9 +477,9 @@
 												"method": "GET",
 												"header": [],
 												"url": {
-													"raw": "{{baseUrl}}/api/person/v{{version}}",
+													"raw": "{{baseUrlDocker}}/api/person/v{{version}}",
 													"host": [
-														"{{baseUrl}}"
+														"{{baseUrlDocker}}"
 													],
 													"path": [
 														"api",
@@ -506,9 +506,9 @@
 													}
 												],
 												"url": {
-													"raw": "{{baseUrl}}/api/person/v{{version}}",
+													"raw": "{{baseUrlDocker}}/api/person/v{{version}}",
 													"host": [
-														"{{baseUrl}}"
+														"{{baseUrlDocker}}"
 													],
 													"path": [
 														"api",
@@ -540,9 +540,9 @@
 													}
 												],
 												"url": {
-													"raw": "{{baseUrl}}/api/person/v{{version}}",
+													"raw": "{{baseUrlDocker}}/api/person/v{{version}}",
 													"host": [
-														"{{baseUrl}}"
+														"{{baseUrlDocker}}"
 													],
 													"path": [
 														"api",
@@ -584,9 +584,9 @@
 													}
 												],
 												"url": {
-													"raw": "{{baseUrl}}/api/v{{version}}/book/:id",
+													"raw": "{{baseUrlDocker}}/api/v{{version}}/book/:id",
 													"host": [
-														"{{baseUrl}}"
+														"{{baseUrlDocker}}"
 													],
 													"path": [
 														"api",
@@ -615,9 +615,9 @@
 															}
 														],
 														"url": {
-															"raw": "{{baseUrl}}/api/v{{version}}/book/:id",
+															"raw": "{{baseUrlDocker}}/api/v{{version}}/book/:id",
 															"host": [
-																"{{baseUrl}}"
+																"{{baseUrlDocker}}"
 															],
 															"path": [
 																"api",
@@ -650,9 +650,9 @@
 														"method": "GET",
 														"header": [],
 														"url": {
-															"raw": "{{baseUrl}}/api/v{{version}}/book/:id",
+															"raw": "{{baseUrlDocker}}/api/v{{version}}/book/:id",
 															"host": [
-																"{{baseUrl}}"
+																"{{baseUrlDocker}}"
 															],
 															"path": [
 																"api",
@@ -685,9 +685,9 @@
 															}
 														],
 														"url": {
-															"raw": "{{baseUrl}}/api/v{{version}}/book/:id",
+															"raw": "{{baseUrlDocker}}/api/v{{version}}/book/:id",
 															"host": [
-																"{{baseUrl}}"
+																"{{baseUrlDocker}}"
 															],
 															"path": [
 																"api",
@@ -725,9 +725,9 @@
 															}
 														],
 														"url": {
-															"raw": "{{baseUrl}}/api/v{{version}}/book/:id",
+															"raw": "{{baseUrlDocker}}/api/v{{version}}/book/:id",
 															"host": [
-																"{{baseUrl}}"
+																"{{baseUrlDocker}}"
 															],
 															"path": [
 																"api",
@@ -767,9 +767,9 @@
 													}
 												],
 												"url": {
-													"raw": "{{baseUrl}}/api/v{{version}}/book/:id",
+													"raw": "{{baseUrlDocker}}/api/v{{version}}/book/:id",
 													"host": [
-														"{{baseUrl}}"
+														"{{baseUrlDocker}}"
 													],
 													"path": [
 														"api",
@@ -793,9 +793,9 @@
 														"method": "DELETE",
 														"header": [],
 														"url": {
-															"raw": "{{baseUrl}}/api/v{{version}}/book/:id",
+															"raw": "{{baseUrlDocker}}/api/v{{version}}/book/:id",
 															"host": [
-																"{{baseUrl}}"
+																"{{baseUrlDocker}}"
 															],
 															"path": [
 																"api",
@@ -828,9 +828,9 @@
 															}
 														],
 														"url": {
-															"raw": "{{baseUrl}}/api/v{{version}}/book/:id",
+															"raw": "{{baseUrlDocker}}/api/v{{version}}/book/:id",
 															"host": [
-																"{{baseUrl}}"
+																"{{baseUrlDocker}}"
 															],
 															"path": [
 																"api",
@@ -868,9 +868,9 @@
 															}
 														],
 														"url": {
-															"raw": "{{baseUrl}}/api/v{{version}}/book/:id",
+															"raw": "{{baseUrlDocker}}/api/v{{version}}/book/:id",
 															"host": [
-																"{{baseUrl}}"
+																"{{baseUrlDocker}}"
 															],
 															"path": [
 																"api",
@@ -912,9 +912,9 @@
 											}
 										],
 										"url": {
-											"raw": "{{baseUrl}}/api/v{{version}}/book/",
+											"raw": "{{baseUrlDocker}}/api/v{{version}}/book/",
 											"host": [
-												"{{baseUrl}}"
+												"{{baseUrlDocker}}"
 											],
 											"path": [
 												"api",
@@ -936,9 +936,9 @@
 													}
 												],
 												"url": {
-													"raw": "{{baseUrl}}/api/v{{version}}/book",
+													"raw": "{{baseUrlDocker}}/api/v{{version}}/book",
 													"host": [
-														"{{baseUrl}}"
+														"{{baseUrlDocker}}"
 													],
 													"path": [
 														"api",
@@ -965,9 +965,9 @@
 												"method": "GET",
 												"header": [],
 												"url": {
-													"raw": "{{baseUrl}}/api/v{{version}}/book",
+													"raw": "{{baseUrlDocker}}/api/v{{version}}/book",
 													"host": [
-														"{{baseUrl}}"
+														"{{baseUrlDocker}}"
 													],
 													"path": [
 														"api",
@@ -994,9 +994,9 @@
 													}
 												],
 												"url": {
-													"raw": "{{baseUrl}}/api/v{{version}}/book",
+													"raw": "{{baseUrlDocker}}/api/v{{version}}/book",
 													"host": [
-														"{{baseUrl}}"
+														"{{baseUrlDocker}}"
 													],
 													"path": [
 														"api",
@@ -1028,9 +1028,9 @@
 													}
 												],
 												"url": {
-													"raw": "{{baseUrl}}/api/v{{version}}/book",
+													"raw": "{{baseUrlDocker}}/api/v{{version}}/book",
 													"host": [
-														"{{baseUrl}}"
+														"{{baseUrlDocker}}"
 													],
 													"path": [
 														"api",
@@ -1078,9 +1078,9 @@
 											}
 										},
 										"url": {
-											"raw": "{{baseUrl}}/api/v{{version}}/book",
+											"raw": "{{baseUrlDocker}}/api/v{{version}}/book",
 											"host": [
-												"{{baseUrl}}"
+												"{{baseUrlDocker}}"
 											],
 											"path": [
 												"api",
@@ -1115,9 +1115,9 @@
 													}
 												},
 												"url": {
-													"raw": "{{baseUrl}}/api/v{{version}}/book",
+													"raw": "{{baseUrlDocker}}/api/v{{version}}/book",
 													"host": [
-														"{{baseUrl}}"
+														"{{baseUrlDocker}}"
 													],
 													"path": [
 														"api",
@@ -1163,9 +1163,9 @@
 													}
 												},
 												"url": {
-													"raw": "{{baseUrl}}/api/v{{version}}/book",
+													"raw": "{{baseUrlDocker}}/api/v{{version}}/book",
 													"host": [
-														"{{baseUrl}}"
+														"{{baseUrlDocker}}"
 													],
 													"path": [
 														"api",
@@ -1211,9 +1211,9 @@
 													}
 												},
 												"url": {
-													"raw": "{{baseUrl}}/api/v{{version}}/book",
+													"raw": "{{baseUrlDocker}}/api/v{{version}}/book",
 													"host": [
-														"{{baseUrl}}"
+														"{{baseUrlDocker}}"
 													],
 													"path": [
 														"api",
@@ -1261,9 +1261,9 @@
 											}
 										},
 										"url": {
-											"raw": "{{baseUrl}}/api/v{{version}}/book",
+											"raw": "{{baseUrlDocker}}/api/v{{version}}/book",
 											"host": [
-												"{{baseUrl}}"
+												"{{baseUrlDocker}}"
 											],
 											"path": [
 												"api",
@@ -1298,9 +1298,9 @@
 													}
 												},
 												"url": {
-													"raw": "{{baseUrl}}/api/v{{version}}/book",
+													"raw": "{{baseUrlDocker}}/api/v{{version}}/book",
 													"host": [
-														"{{baseUrl}}"
+														"{{baseUrlDocker}}"
 													],
 													"path": [
 														"api",
@@ -1346,9 +1346,9 @@
 													}
 												},
 												"url": {
-													"raw": "{{baseUrl}}/api/v{{version}}/book",
+													"raw": "{{baseUrlDocker}}/api/v{{version}}/book",
 													"host": [
-														"{{baseUrl}}"
+														"{{baseUrlDocker}}"
 													],
 													"path": [
 														"api",
@@ -1394,9 +1394,9 @@
 													}
 												},
 												"url": {
-													"raw": "{{baseUrl}}/api/v{{version}}/book",
+													"raw": "{{baseUrlDocker}}/api/v{{version}}/book",
 													"host": [
-														"{{baseUrl}}"
+														"{{baseUrlDocker}}"
 													],
 													"path": [
 														"api",
@@ -1425,9 +1425,9 @@
 										"method": "DELETE",
 										"header": [],
 										"url": {
-											"raw": "{{baseUrl}}/api/v{{version}}/book/23",
+											"raw": "{{baseUrlDocker}}/api/v{{version}}/book/23",
 											"host": [
-												"{{baseUrl}}"
+												"{{baseUrlDocker}}"
 											],
 											"path": [
 												"api",
@@ -1458,9 +1458,9 @@
 													}
 												],
 												"url": {
-													"raw": "{{baseUrl}}/api/person/v{{version}}/:id",
+													"raw": "{{baseUrlDocker}}/api/person/v{{version}}/:id",
 													"host": [
-														"{{baseUrl}}"
+														"{{baseUrlDocker}}"
 													],
 													"path": [
 														"api",
@@ -1489,9 +1489,9 @@
 															}
 														],
 														"url": {
-															"raw": "{{baseUrl}}/api/person/v{{version}}/:id",
+															"raw": "{{baseUrlDocker}}/api/person/v{{version}}/:id",
 															"host": [
-																"{{baseUrl}}"
+																"{{baseUrlDocker}}"
 															],
 															"path": [
 																"api",
@@ -1524,9 +1524,9 @@
 														"method": "GET",
 														"header": [],
 														"url": {
-															"raw": "{{baseUrl}}/api/person/v{{version}}/:id",
+															"raw": "{{baseUrlDocker}}/api/person/v{{version}}/:id",
 															"host": [
-																"{{baseUrl}}"
+																"{{baseUrlDocker}}"
 															],
 															"path": [
 																"api",
@@ -1559,9 +1559,9 @@
 															}
 														],
 														"url": {
-															"raw": "{{baseUrl}}/api/person/v{{version}}/:id",
+															"raw": "{{baseUrlDocker}}/api/person/v{{version}}/:id",
 															"host": [
-																"{{baseUrl}}"
+																"{{baseUrlDocker}}"
 															],
 															"path": [
 																"api",
@@ -1599,9 +1599,9 @@
 															}
 														],
 														"url": {
-															"raw": "{{baseUrl}}/api/person/v{{version}}/:id",
+															"raw": "{{baseUrlDocker}}/api/person/v{{version}}/:id",
 															"host": [
-																"{{baseUrl}}"
+																"{{baseUrlDocker}}"
 															],
 															"path": [
 																"api",
@@ -1641,9 +1641,9 @@
 													}
 												],
 												"url": {
-													"raw": "{{baseUrl}}/api/person/v{{version}}/:id",
+													"raw": "{{baseUrlDocker}}/api/person/v{{version}}/:id",
 													"host": [
-														"{{baseUrl}}"
+														"{{baseUrlDocker}}"
 													],
 													"path": [
 														"api",
@@ -1667,9 +1667,9 @@
 														"method": "DELETE",
 														"header": [],
 														"url": {
-															"raw": "{{baseUrl}}/api/person/v{{version}}/:id",
+															"raw": "{{baseUrlDocker}}/api/person/v{{version}}/:id",
 															"host": [
-																"{{baseUrl}}"
+																"{{baseUrlDocker}}"
 															],
 															"path": [
 																"api",
@@ -1702,9 +1702,9 @@
 															}
 														],
 														"url": {
-															"raw": "{{baseUrl}}/api/person/v{{version}}/:id",
+															"raw": "{{baseUrlDocker}}/api/person/v{{version}}/:id",
 															"host": [
-																"{{baseUrl}}"
+																"{{baseUrlDocker}}"
 															],
 															"path": [
 																"api",
@@ -1742,9 +1742,9 @@
 															}
 														],
 														"url": {
-															"raw": "{{baseUrl}}/api/person/v{{version}}/:id",
+															"raw": "{{baseUrlDocker}}/api/person/v{{version}}/:id",
 															"host": [
-																"{{baseUrl}}"
+																"{{baseUrlDocker}}"
 															],
 															"path": [
 																"api",
@@ -1786,9 +1786,9 @@
 											}
 										],
 										"url": {
-											"raw": "{{baseUrl}}/api/person/v{{version}}/asc/30/1?name=leo",
+											"raw": "{{baseUrlDocker}}/api/person/v{{version}}/asc/30/1?name=leo",
 											"host": [
-												"{{baseUrl}}"
+												"{{baseUrlDocker}}"
 											],
 											"path": [
 												"api",
@@ -1818,9 +1818,9 @@
 													}
 												],
 												"url": {
-													"raw": "{{baseUrl}}/api/person/v{{version}}",
+													"raw": "{{baseUrlDocker}}/api/person/v{{version}}",
 													"host": [
-														"{{baseUrl}}"
+														"{{baseUrlDocker}}"
 													],
 													"path": [
 														"api",
@@ -1847,9 +1847,9 @@
 												"method": "GET",
 												"header": [],
 												"url": {
-													"raw": "{{baseUrl}}/api/person/v{{version}}",
+													"raw": "{{baseUrlDocker}}/api/person/v{{version}}",
 													"host": [
-														"{{baseUrl}}"
+														"{{baseUrlDocker}}"
 													],
 													"path": [
 														"api",
@@ -1876,9 +1876,9 @@
 													}
 												],
 												"url": {
-													"raw": "{{baseUrl}}/api/person/v{{version}}",
+													"raw": "{{baseUrlDocker}}/api/person/v{{version}}",
 													"host": [
-														"{{baseUrl}}"
+														"{{baseUrlDocker}}"
 													],
 													"path": [
 														"api",
@@ -1910,9 +1910,9 @@
 													}
 												],
 												"url": {
-													"raw": "{{baseUrl}}/api/person/v{{version}}",
+													"raw": "{{baseUrlDocker}}/api/person/v{{version}}",
 													"host": [
-														"{{baseUrl}}"
+														"{{baseUrlDocker}}"
 													],
 													"path": [
 														"api",
@@ -1965,9 +1965,9 @@
 											}
 										},
 										"url": {
-											"raw": "{{baseUrl}}/api/person/v{{version}}",
+											"raw": "{{baseUrlDocker}}/api/person/v{{version}}",
 											"host": [
-												"{{baseUrl}}"
+												"{{baseUrlDocker}}"
 											],
 											"path": [
 												"api",
@@ -2002,9 +2002,9 @@
 													}
 												},
 												"url": {
-													"raw": "{{baseUrl}}/api/person/v{{version}}",
+													"raw": "{{baseUrlDocker}}/api/person/v{{version}}",
 													"host": [
-														"{{baseUrl}}"
+														"{{baseUrlDocker}}"
 													],
 													"path": [
 														"api",
@@ -2050,9 +2050,9 @@
 													}
 												},
 												"url": {
-													"raw": "{{baseUrl}}/api/person/v{{version}}",
+													"raw": "{{baseUrlDocker}}/api/person/v{{version}}",
 													"host": [
-														"{{baseUrl}}"
+														"{{baseUrlDocker}}"
 													],
 													"path": [
 														"api",
@@ -2098,9 +2098,9 @@
 													}
 												},
 												"url": {
-													"raw": "{{baseUrl}}/api/person/v{{version}}",
+													"raw": "{{baseUrlDocker}}/api/person/v{{version}}",
 													"host": [
-														"{{baseUrl}}"
+														"{{baseUrlDocker}}"
 													],
 													"path": [
 														"api",
@@ -2134,9 +2134,9 @@
 											}
 										],
 										"url": {
-											"raw": "{{baseUrl}}/api/person/v{{version}}/2",
+											"raw": "{{baseUrlDocker}}/api/person/v{{version}}/2",
 											"host": [
-												"{{baseUrl}}"
+												"{{baseUrlDocker}}"
 											],
 											"path": [
 												"api",
@@ -2158,9 +2158,9 @@
 													}
 												],
 												"url": {
-													"raw": "{{baseUrl}}/api/person/v{{version}}",
+													"raw": "{{baseUrlDocker}}/api/person/v{{version}}",
 													"host": [
-														"{{baseUrl}}"
+														"{{baseUrlDocker}}"
 													],
 													"path": [
 														"api",
@@ -2187,9 +2187,9 @@
 												"method": "GET",
 												"header": [],
 												"url": {
-													"raw": "{{baseUrl}}/api/person/v{{version}}",
+													"raw": "{{baseUrlDocker}}/api/person/v{{version}}",
 													"host": [
-														"{{baseUrl}}"
+														"{{baseUrlDocker}}"
 													],
 													"path": [
 														"api",
@@ -2216,9 +2216,9 @@
 													}
 												],
 												"url": {
-													"raw": "{{baseUrl}}/api/person/v{{version}}",
+													"raw": "{{baseUrlDocker}}/api/person/v{{version}}",
 													"host": [
-														"{{baseUrl}}"
+														"{{baseUrlDocker}}"
 													],
 													"path": [
 														"api",
@@ -2250,9 +2250,9 @@
 													}
 												],
 												"url": {
-													"raw": "{{baseUrl}}/api/person/v{{version}}",
+													"raw": "{{baseUrlDocker}}/api/person/v{{version}}",
 													"host": [
-														"{{baseUrl}}"
+														"{{baseUrlDocker}}"
 													],
 													"path": [
 														"api",
@@ -2298,9 +2298,9 @@
 											}
 										},
 										"url": {
-											"raw": "{{baseUrl}}/api/Person/v{{version}}/findPersonByName?firstName=leo&lastName=v",
+											"raw": "{{baseUrlDocker}}/api/Person/v{{version}}/findPersonByName?firstName=leo&lastName=v",
 											"host": [
-												"{{baseUrl}}"
+												"{{baseUrlDocker}}"
 											],
 											"path": [
 												"api",
@@ -2332,9 +2332,9 @@
 													}
 												],
 												"url": {
-													"raw": "{{baseUrl}}/api/person/v{{version}}",
+													"raw": "{{baseUrlDocker}}/api/person/v{{version}}",
 													"host": [
-														"{{baseUrl}}"
+														"{{baseUrlDocker}}"
 													],
 													"path": [
 														"api",
@@ -2361,9 +2361,9 @@
 												"method": "GET",
 												"header": [],
 												"url": {
-													"raw": "{{baseUrl}}/api/person/v{{version}}",
+													"raw": "{{baseUrlDocker}}/api/person/v{{version}}",
 													"host": [
-														"{{baseUrl}}"
+														"{{baseUrlDocker}}"
 													],
 													"path": [
 														"api",
@@ -2390,9 +2390,9 @@
 													}
 												],
 												"url": {
-													"raw": "{{baseUrl}}/api/person/v{{version}}",
+													"raw": "{{baseUrlDocker}}/api/person/v{{version}}",
 													"host": [
-														"{{baseUrl}}"
+														"{{baseUrlDocker}}"
 													],
 													"path": [
 														"api",
@@ -2424,9 +2424,9 @@
 													}
 												],
 												"url": {
-													"raw": "{{baseUrl}}/api/person/v{{version}}",
+													"raw": "{{baseUrlDocker}}/api/person/v{{version}}",
 													"host": [
-														"{{baseUrl}}"
+														"{{baseUrlDocker}}"
 													],
 													"path": [
 														"api",
@@ -2474,9 +2474,9 @@
 											}
 										},
 										"url": {
-											"raw": "{{baseUrl}}/api/person/v{{version}}",
+											"raw": "{{baseUrlDocker}}/api/person/v{{version}}",
 											"host": [
-												"{{baseUrl}}"
+												"{{baseUrlDocker}}"
 											],
 											"path": [
 												"api",
@@ -2511,9 +2511,9 @@
 													}
 												},
 												"url": {
-													"raw": "{{baseUrl}}/api/person/v{{version}}",
+													"raw": "{{baseUrlDocker}}/api/person/v{{version}}",
 													"host": [
-														"{{baseUrl}}"
+														"{{baseUrlDocker}}"
 													],
 													"path": [
 														"api",
@@ -2559,9 +2559,9 @@
 													}
 												},
 												"url": {
-													"raw": "{{baseUrl}}/api/person/v{{version}}",
+													"raw": "{{baseUrlDocker}}/api/person/v{{version}}",
 													"host": [
-														"{{baseUrl}}"
+														"{{baseUrlDocker}}"
 													],
 													"path": [
 														"api",
@@ -2607,9 +2607,9 @@
 													}
 												},
 												"url": {
-													"raw": "{{baseUrl}}/api/person/v{{version}}",
+													"raw": "{{baseUrlDocker}}/api/person/v{{version}}",
 													"host": [
-														"{{baseUrl}}"
+														"{{baseUrlDocker}}"
 													],
 													"path": [
 														"api",
@@ -2648,9 +2648,9 @@
 										"method": "DELETE",
 										"header": [],
 										"url": {
-											"raw": "{{baseUrl}}/api/person/v{{version}}/6",
+											"raw": "{{baseUrlDocker}}/api/person/v{{version}}/6",
 											"host": [
-												"{{baseUrl}}"
+												"{{baseUrlDocker}}"
 											],
 											"path": [
 												"api",
@@ -2687,9 +2687,9 @@
 											}
 										},
 										"url": {
-											"raw": "{{baseUrl}}/api/Person/v{{version}}/2",
+											"raw": "{{baseUrlDocker}}/api/Person/v{{version}}/2",
 											"host": [
-												"{{baseUrl}}"
+												"{{baseUrlDocker}}"
 											],
 											"path": [
 												"api",
@@ -2725,9 +2725,9 @@
 													}
 												},
 												"url": {
-													"raw": "{{baseUrl}}/api/person/v{{version}}",
+													"raw": "{{baseUrlDocker}}/api/person/v{{version}}",
 													"host": [
-														"{{baseUrl}}"
+														"{{baseUrlDocker}}"
 													],
 													"path": [
 														"api",
@@ -2773,9 +2773,9 @@
 													}
 												},
 												"url": {
-													"raw": "{{baseUrl}}/api/person/v{{version}}",
+													"raw": "{{baseUrlDocker}}/api/person/v{{version}}",
 													"host": [
-														"{{baseUrl}}"
+														"{{baseUrlDocker}}"
 													],
 													"path": [
 														"api",
@@ -2821,9 +2821,9 @@
 													}
 												},
 												"url": {
-													"raw": "{{baseUrl}}/api/person/v{{version}}",
+													"raw": "{{baseUrlDocker}}/api/person/v{{version}}",
 													"host": [
-														"{{baseUrl}}"
+														"{{baseUrlDocker}}"
 													],
 													"path": [
 														"api",
@@ -2876,9 +2876,9 @@
 							]
 						},
 						"url": {
-							"raw": "{{baseUrl}}/api/file/v{{version}}/uploadFile",
+							"raw": "{{baseUrlDocker}}/api/file/v{{version}}/uploadFile",
 							"host": [
-								"{{baseUrl}}"
+								"{{baseUrlDocker}}"
 							],
 							"path": [
 								"api",
@@ -2900,9 +2900,9 @@
 									}
 								],
 								"url": {
-									"raw": "{{baseUrl}}/api/person/v{{version}}",
+									"raw": "{{baseUrlDocker}}/api/person/v{{version}}",
 									"host": [
-										"{{baseUrl}}"
+										"{{baseUrlDocker}}"
 									],
 									"path": [
 										"api",
@@ -2929,9 +2929,9 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{baseUrl}}/api/person/v{{version}}",
+									"raw": "{{baseUrlDocker}}/api/person/v{{version}}",
 									"host": [
-										"{{baseUrl}}"
+										"{{baseUrlDocker}}"
 									],
 									"path": [
 										"api",
@@ -2958,9 +2958,9 @@
 									}
 								],
 								"url": {
-									"raw": "{{baseUrl}}/api/person/v{{version}}",
+									"raw": "{{baseUrlDocker}}/api/person/v{{version}}",
 									"host": [
-										"{{baseUrl}}"
+										"{{baseUrlDocker}}"
 									],
 									"path": [
 										"api",
@@ -2992,9 +2992,9 @@
 									}
 								],
 								"url": {
-									"raw": "{{baseUrl}}/api/person/v{{version}}",
+									"raw": "{{baseUrlDocker}}/api/person/v{{version}}",
 									"host": [
-										"{{baseUrl}}"
+										"{{baseUrlDocker}}"
 									],
 									"path": [
 										"api",
@@ -3045,9 +3045,9 @@
 							]
 						},
 						"url": {
-							"raw": "{{baseUrl}}/api/file/v{{version}}/uploadMultipleFiles",
+							"raw": "{{baseUrlDocker}}/api/file/v{{version}}/uploadMultipleFiles",
 							"host": [
-								"{{baseUrl}}"
+								"{{baseUrlDocker}}"
 							],
 							"path": [
 								"api",
@@ -3069,9 +3069,9 @@
 									}
 								],
 								"url": {
-									"raw": "{{baseUrl}}/api/person/v{{version}}",
+									"raw": "{{baseUrlDocker}}/api/person/v{{version}}",
 									"host": [
-										"{{baseUrl}}"
+										"{{baseUrlDocker}}"
 									],
 									"path": [
 										"api",
@@ -3098,9 +3098,9 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{baseUrl}}/api/person/v{{version}}",
+									"raw": "{{baseUrlDocker}}/api/person/v{{version}}",
 									"host": [
-										"{{baseUrl}}"
+										"{{baseUrlDocker}}"
 									],
 									"path": [
 										"api",
@@ -3127,9 +3127,9 @@
 									}
 								],
 								"url": {
-									"raw": "{{baseUrl}}/api/person/v{{version}}",
+									"raw": "{{baseUrlDocker}}/api/person/v{{version}}",
 									"host": [
-										"{{baseUrl}}"
+										"{{baseUrlDocker}}"
 									],
 									"path": [
 										"api",
@@ -3161,9 +3161,9 @@
 									}
 								],
 								"url": {
-									"raw": "{{baseUrl}}/api/person/v{{version}}",
+									"raw": "{{baseUrlDocker}}/api/person/v{{version}}",
 									"host": [
-										"{{baseUrl}}"
+										"{{baseUrlDocker}}"
 									],
 									"path": [
 										"api",
@@ -3217,9 +3217,9 @@
 							]
 						},
 						"url": {
-							"raw": "{{baseUrl}}/api/file/v{{version}}/downloadFile/formulario-declaracao-de-conteudo-a5.pdf",
+							"raw": "{{baseUrlDocker}}/api/file/v{{version}}/downloadFile/formulario-declaracao-de-conteudo-a5.pdf",
 							"host": [
-								"{{baseUrl}}"
+								"{{baseUrlDocker}}"
 							],
 							"path": [
 								"api",
@@ -3242,9 +3242,9 @@
 									}
 								],
 								"url": {
-									"raw": "{{baseUrl}}/api/person/v{{version}}",
+									"raw": "{{baseUrlDocker}}/api/person/v{{version}}",
 									"host": [
-										"{{baseUrl}}"
+										"{{baseUrlDocker}}"
 									],
 									"path": [
 										"api",
@@ -3271,9 +3271,9 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{baseUrl}}/api/person/v{{version}}",
+									"raw": "{{baseUrlDocker}}/api/person/v{{version}}",
 									"host": [
-										"{{baseUrl}}"
+										"{{baseUrlDocker}}"
 									],
 									"path": [
 										"api",
@@ -3300,9 +3300,9 @@
 									}
 								],
 								"url": {
-									"raw": "{{baseUrl}}/api/person/v{{version}}",
+									"raw": "{{baseUrlDocker}}/api/person/v{{version}}",
 									"host": [
-										"{{baseUrl}}"
+										"{{baseUrlDocker}}"
 									],
 									"path": [
 										"api",
@@ -3334,9 +3334,9 @@
 									}
 								],
 								"url": {
-									"raw": "{{baseUrl}}/api/person/v{{version}}",
+									"raw": "{{baseUrlDocker}}/api/person/v{{version}}",
 									"host": [
-										"{{baseUrl}}"
+										"{{baseUrlDocker}}"
 									],
 									"path": [
 										"api",
